@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALFANDEGA</title>
+    <h1>Alfandega</h1>
+    Em que país você mora? <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res"></div>
+</head>
+<body>
+    <script>
+        function verificar() {
+            var pais1 = window.document.querySelector('input#pais')
+            var res = window.document.querySelector('div#res')
+
+            var pais2 = String(pais1.value).toUpperCase().replace(/\s+/g, '') 
+            // aqui trasforma tudo pra UpperCase e substitui os espaços caso tenha!
+            
+            res.innerHTML = `Você é do país ${pais2}. ` //
+
+
+            if (pais2 == 'BRASIL') { // Como foi usado o toUpperCase a palavra brasil tem que ficar toda em maiúsculas aqui!
+                res.innerHTML += 'Você é brasileiro'
+            } else {
+                res.innerHTML += 'Você é estrangeiro'
+            }
+                
+        }
+    </script>
+</body>
+</html>
